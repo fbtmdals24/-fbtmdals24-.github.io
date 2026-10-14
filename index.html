@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>먼작귀 포켓 × 류승민 (Seungmin Ryu) - 공식 프로필 &amp; 인생 스토리카드</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tone.js for cute game sound effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <!-- Google Fonts for Cute Chiikawa & Academic Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700;800;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'chiikawa-sky': '#CBEBFA',
+                        'chiikawa-pink': '#FF8BA7',
+                        'chiikawa-yellow': '#FFDE59',
+                        'chiikawa-green': '#A1E06A',
+                        'chiikawa-darkgreen': '#588135',
+                        'chiikawa-cream': '#FCF8ED',
+                        'chiikawa-brown': '#5C4033',
+                        'chiikawa-blue': '#8BCBF5',
+                        'chiikawa-purple': '#C3A0EE'
+                    },
+                    fontFamily: {
+                        'cute': ['Gaegu', 'cursive'],
+                        'dodum': ['Gowun Dodum', 'sans-serif'],
+                        'sans': ['Noto Sans KR', 'sans-serif'],
+                        'fredoka': ['Fredoka', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Gowun Dodum', 'Noto Sans KR', sans-serif;
+            background-color: #FCF8ED;
+            color: #4A3A2C;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        /* Floating Balloon Animation */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(-3deg); }
+            50% { transform: translateY(-18px) rotate(4deg); }
+        }
+
+        @keyframes floatMedium {
+            0%, 100% { transform: translateY(0px) rotate(2deg); }
+            50% { transform: translateY(-26px) rotate(-3deg); }
+        }
+
+        @keyframes floatFast {
+            0%, 100% { transform: translateY(0px) rotate(-5deg); }
+            50% { transform: translateY(-32px) rotate(5deg); }
+        }
+
+        @keyframes cloudScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-8px) scale(1.03); }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-6deg); }
+            75% { transform: rotate(6deg); }
+        }
+
+        .anim-balloon-1 { animation: floatSlow 5s ease-in-out infinite; }
+        .anim-balloon-2 { animation: floatMedium 6.5s ease-in-out infinite 1s; }
+        .anim-balloon-3 { animation: floatFast 7s ease-in-out infinite 0.5s; }
+        .anim-bounce { animation: bounceGentle 3s ease-in-out infinite; }
+        .anim-wiggle:hover { animation: wiggle 0.4s ease-in-out infinite; }
+
+        /* Cloud Background Parallax */
+        .cloud-track {
+            display: flex;
+            width: 200%;
+            animation: cloudScroll 45s linear infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F2E8CF;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF8BA7;
+            border-radius: 10px;
+            border: 2px solid #F2E8CF;
+        }
+
+        /* Cute Title Badge Grid Pattern Circles */
+        .letter-circle {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Gaegu', cursive;
+            font-weight: 700;
+            font-size: 22px;
+            color: #3D2B1F;
+            box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15), 0 2px 5px rgba(0,0,0,0.1);
+            border: 2px solid #FFFFFF;
+        }
+
+        .circle-ryu { background-color: #FFB3C1; background-image: radial-gradient(#FF758F 15%, transparent 15%); background-size: 6px 6px; }
+        .circle-seung { background-color: #90E0EF; background-image: radial-gradient(#0077B6 15%, transparent 15%); background-size: 6px 6px; }
+        .circle-min { background-color: #C7F9CC; background-image: radial-gradient(#52B788 15%, transparent 15%); background-size: 6px 6px; }
+        .circle-po { background-color: #E2C0FF; background-image: radial-gradient(#9D4EDD 15%, transparent 15%); background-size: 6px 6px; }
+        .circle-ket { background-color: #DDA15E; background-image: radial-gradient(#BC6C25 15%, transparent 15%); background-size: 6px 6px; }
+    </style>
+</head>
+<body class="bg-chiikawa-cream text-chiikawa-brown relative">
+
+    <!-- Sound Effect & Audio Toggle Control -->
+    <div class="fixed top-5 left-5 z-50 flex items-center gap-2">
+        <button id="soundToggleBtn" onclick="toggleAudio()" class="bg-white/90 hover:bg-white text-chiikawa-brown border-2 border-chiikawa-pink/40 px-3.5 py-2 rounded-full shadow-md text-xs font-bold flex items-center gap-2 transition transform active:scale-95 backdrop-blur-sm">
+            <i id="soundIcon" class="fa-solid fa-volume-xmark text-chiikawa-pink text-sm"></i>
+            <span id="soundText">사운드 OFF</span>
+        </button>
+        <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-amber-400 to-yellow-300 hover:from-amber-300 hover:to-yellow-200 text-chiikawa-brown border-2 border-amber-500/50 px-3.5 py-2 rounded-full shadow-md text-xs font-extrabold flex items-center gap-1.5 transition transform active:scale-95">
+            <i class="fa-solid fa-sparkles text-amber-700"></i>
+            <span>Gemini AI</span>
+        </a>
+    </div>
+
+    <!-- Top Right Hamburger Menu Button -->
+    <div class="fixed top-5 right-5 z-50">
+        <button onclick="toggleMenu()" class="relative group focus:outline-none" title="메뉴 열기">
+            <!-- Bear Ears -->
+            <span class="absolute -top-1.5 left-0.5 w-4 h-4 bg-chiikawa-pink rounded-full border-2 border-white group-hover:scale-110 transition"></span>
+            <span class="absolute -top-1.5 right-0.5 w-4 h-4 bg-chiikawa-pink rounded-full border-2 border-white group-hover:scale-110 transition"></span>
+            
+            <div class="w-12 h-12 rounded-full bg-chiikawa-pink border-3 border-white shadow-lg flex flex-col items-center justify-center gap-1.5 relative z-10 transition transform group-hover:scale-105 active:scale-95">
+                <span class="w-6 h-0.5 bg-white rounded-full transition-transform"></span>
+                <span class="w-6 h-0.5 bg-white rounded-full transition-opacity"></span>
+                <span class="w-6 h-0.5 bg-white rounded-full transition-transform"></span>
+            </div>
+        </button>
+    </div>
+
+    <!-- Slide-in Navigation Drawer -->
+    <div id="navDrawer" class="fixed inset-0 bg-black/40 z-40 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-300 flex justify-end">
+        <div id="navDrawerContent" class="w-full sm:w-80 bg-chiikawa-cream h-full shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 border-l-4 border-chiikawa-pink">
+            <div>
+                <!-- Drawer Header -->
+                <div class="flex items-center justify-between pb-4 border-b-2 border-dashed border-chiikawa-pink/30">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-chiikawa-pink animate-ping"></span>
+                        <span class="font-cute font-bold text-xl text-chiikawa-pink">류승민 × 먼작귀 메뉴</span>
+                    </div>
+                    <button onclick="toggleMenu()" class="w-8 h-8 rounded-full bg-chiikawa-pink/20 hover:bg-chiikawa-pink text-chiikawa-pink hover:text-white transition flex items-center justify-center">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="mt-6 space-y-3 font-bold text-lg">
+                    <a href="#hero" onclick="toggleMenu()" class="flex items-center justify-between p-3 rounded-xl hover:bg-chiikawa-pink/10 hover:text-chiikawa-pink transition">
+                        <span><i class="fa-solid fa-user-tie mr-3 text-chiikawa-pink"></i>프로필 홈</span>
+                        <i class="fa-solid fa-chevron-right text-xs opacity-40"></i>
+                    </a>
+                    <a href="#timeline" onclick="toggleMenu()" class="flex items-center justify-between p-3 rounded-xl hover:bg-chiikawa-pink/10 hover:text-chiikawa-pink transition">
+                        <span><i class="fa-solid fa-timeline mr-3 text-chiikawa-pink"></i>10대~40대 연령별 스토리</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-chiikawa-pink text-white">NEW</span>
+                    </a>
+                    <a href="#characters" onclick="toggleMenu()" class="flex items-center justify-between p-3 rounded-xl hover:bg-chiikawa-pink/10 hover:text-chiikawa-pink transition">
+                        <span><i class="fa-solid fa-users mr-3 text-chiikawa-pink"></i>먼작귀 친구들</span>
+                        <i class="fa-solid fa-chevron-right text-xs opacity-40"></i>
+                    </a>
+                    <a href="#weeding-minigame" onclick="toggleMenu()" class="flex items-center justify-between p-3 rounded-xl hover:bg-chiikawa-pink/10 hover:text-chiikawa-pink transition">
+                        <span><i class="fa-solid fa-seedling mr-3 text-chiikawa-green"></i>제초 체험 미니게임</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-chiikawa-green text-white">PLAY</span>
+                    </a>
+                    <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3 rounded-xl hover:bg-amber-100 hover:text-amber-800 transition">
+                        <span><i class="fa-solid fa-sparkles mr-3 text-amber-500"></i>Gemini AI 바로가기</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-40"></i>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Contact Trigger Button in Drawer -->
+            <div class="space-y-4">
+                <button onclick="openContactModal()" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-chiikawa-pink to-pink-400 text-white font-bold shadow-lg shadow-pink-300/50 hover:brightness-105 active:scale-95 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>연락처 &amp; 메시지 보내기</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen bg-chiikawa-sky overflow-hidden flex flex-col justify-between pt-10">
+
+        <!-- Animated Sky Cloud Background -->
+        <div class="absolute inset-0 pointer-events-none opacity-80 z-0">
+            <div class="cloud-track opacity-90">
+                <div class="w-full flex justify-around items-center pt-8">
+                    <svg class="w-32 h-16 text-white fill-current opacity-90" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                    <svg class="w-48 h-20 text-white fill-current opacity-70" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                    <svg class="w-24 h-12 text-white fill-current opacity-80" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                </div>
+                <div class="w-full flex justify-around items-center pt-8">
+                    <svg class="w-40 h-18 text-white fill-current opacity-80" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                    <svg class="w-28 h-14 text-white fill-current opacity-90" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Balloons (Clickable Sound Effect) -->
+        <div class="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+            <div onclick="popBalloon(this, 'E5')" class="pointer-events-auto absolute left-[8%] top-[18%] cursor-pointer anim-balloon-1 transform hover:scale-110 transition">
+                <svg class="w-10 h-14 text-[#FFDE59] fill-current drop-shadow-md" viewBox="0 0 24 32"><path d="M12 0C5.37 0 0 6.27 0 14c0 6.63 4 12 10 13.6V30l2 2 2-2v-2.4c6-1.6 10-6.97 10-13.6C24 6.27 18.63 0 12 0z"/></svg>
+            </div>
+            <div onclick="popBalloon(this, 'G5')" class="pointer-events-auto absolute left-[20%] top-[26%] cursor-pointer anim-balloon-2 transform hover:scale-110 transition">
+                <svg class="w-11 h-15 text-[#FFB703] fill-current drop-shadow-md" viewBox="0 0 24 32"><path d="M12 0C5.37 0 0 6.27 0 14c0 6.63 4 12 10 13.6V30l2 2 2-2v-2.4c6-1.6 10-6.97 10-13.6C24 6.27 18.63 0 12 0z"/></svg>
+            </div>
+            <div onclick="popBalloon(this, 'C6')" class="pointer-events-auto absolute left-[12%] top-[52%] cursor-pointer anim-balloon-1 transform hover:scale-110 transition">
+                <svg class="w-10 h-14 text-[#8BCBF5] fill-current drop-shadow-md" viewBox="0 0 24 32"><path d="M12 0C5.37 0 0 6.27 0 14c0 6.63 4 12 10 13.6V30l2 2 2-2v-2.4c6-1.6 10-6.97 10-13.6C24 6.27 18.63 0 12 0z"/></svg>
+            </div>
+        </div>
+
+        <!-- Top Right Title Cloud Badge -->
+        <div class="relative z-20 max-w-7xl mx-auto px-6 w-full flex justify-end pt-4 sm:pt-6 pr-6 sm:pr-12">
+            <div class="relative group cursor-pointer anim-bounce" onclick="playChimeSound()">
+                <div class="bg-white border-4 border-chiikawa-brown/80 rounded-[45px] p-4 sm:p-5 shadow-2xl relative max-w-xs sm:max-w-md text-center">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full border-2 border-chiikawa-brown mx-auto -mt-8 shadow-md flex items-center justify-center text-xl">
+                        🐻
+                    </div>
+                    <div class="flex items-center justify-center gap-1 my-2">
+                        <div class="letter-circle circle-ryu">류</div>
+                        <div class="letter-circle circle-seung">승</div>
+                        <div class="letter-circle circle-min">민</div>
+                        <div class="letter-circle circle-po">포</div>
+                        <div class="letter-circle circle-ket">켓</div>
+                    </div>
+                    <div class="text-xs font-fredoka tracking-widest text-chiikawa-brown font-extrabold uppercase">
+                        SEUNGMIN RYU × CHIIKAWA
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Seungmin Ryu Profile Feature Card -->
+        <div class="relative z-20 max-w-4xl mx-auto px-6 w-full my-auto py-6">
+            <div class="bg-white/95 backdrop-blur-md border-4 border-chiikawa-brown rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                    
+                    <!-- Profile Photo Frame -->
+                    <div class="md:col-span-5 flex flex-col items-center">
+                        <div class="relative group">
+                            <!-- Cute Bear Ear Decor -->
+                            <div class="absolute -top-3 left-4 w-8 h-8 bg-chiikawa-pink rounded-full border-2 border-chiikawa-brown z-10 flex items-center justify-center text-xs">🎀</div>
+                            <div class="absolute -top-3 right-4 w-8 h-8 bg-chiikawa-pink rounded-full border-2 border-chiikawa-brown z-10 flex items-center justify-center text-xs">✨</div>
+                            
+                            <!-- Image Holder with Frame -->
+                            <div class="w-48 h-60 rounded-2xl overflow-hidden border-4 border-chiikawa-brown shadow-xl bg-chiikawa-cream relative z-0">
+                                <img src="증명사진.jpg" 
+                                     alt="류승민 프로필 사진" 
+                                     class="w-full h-full object-cover object-top"
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=400';">
+                            </div>
+
+                            <!-- Cute Profile Sticker Badge -->
+                            <div class="absolute -bottom-2 -right-2 bg-chiikawa-yellow border-2 border-chiikawa-brown px-2.5 py-0.5 rounded-full text-[11px] font-bold shadow-md z-10 animate-bounce">
+                                🐻 류승민
+                            </div>
+                        </div>
+
+                        <div class="mt-4 flex items-center gap-2">
+                            <span class="px-3 py-1 rounded-full bg-chiikawa-pink text-white font-extrabold text-xs shadow">
+                                22세
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-chiikawa-yellow border border-chiikawa-brown/40 text-chiikawa-brown font-extrabold text-xs shadow">
+                                ISFJ 용감한 수호자
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Profile Info Text Details -->
+                    <div class="md:col-span-7 space-y-3 text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-chiikawa-green/20 border border-chiikawa-green text-chiikawa-darkgreen font-bold text-xs">
+                            <span>🌱</span>
+                            <span>GACHON UNIVERSITY</span>
+                        </div>
+
+                        <h1 class="font-cute text-4xl sm:text-5xl font-bold text-chiikawa-brown">
+                            류승민 <span class="text-xl sm:text-2xl text-chiikawa-brown/70 font-sans font-medium">(Seungmin Ryu)</span>
+                        </h1>
+
+                        <p class="text-sm font-bold text-chiikawa-brown/80 leading-relaxed">
+                            가천대학교 경영대학 경영학과 재학 중 <span class="text-chiikawa-pink font-extrabold">(22세)</span>
+                        </p>
+
+                        <p class="text-xs sm:text-sm text-chiikawa-brown/90 leading-relaxed font-medium bg-chiikawa-cream p-3 rounded-2xl border border-chiikawa-brown/20">
+                            세심한 데이터 분석력과 책임감을 겸비한 ISFJ 마케팅 전략 탐구자입니다. 성실한 모몽가와 상냥한 치이카와처럼 차분하게 팀을 이끕니다!
+                        </p>
+
+                        <!-- Contact Badges -->
+                        <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-bold">
+                            <a href="tel:01086487680" class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-chiikawa-brown/30 hover:bg-pink-50 transition">
+                                <i class="fa-solid fa-phone text-chiikawa-pink"></i>
+                                <span>010-8648-7680</span>
+                            </a>
+                            <a href="mailto:seungmin@gachon.ac.kr" class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-chiikawa-brown/30 hover:bg-blue-50 transition">
+                                <i class="fa-solid fa-envelope text-chiikawa-blue"></i>
+                                <span>seungmin@gachon.ac.kr</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Landscape Bottom Green Hill Section -->
+        <div class="relative z-10 w-full mt-auto">
+            <div class="relative w-full h-48 bg-gradient-to-b from-[#8ED055] to-[#71B53B] rounded-t-[50%_20%] border-t-4 border-chiikawa-darkgreen flex items-end justify-around px-8 pb-4">
+                <div onclick="playVoice('chiikawa')" class="cursor-pointer hover:scale-110 transition text-center">
+                    <div class="w-12 h-12 bg-white rounded-full border-2 border-chiikawa-brown flex items-center justify-center font-bold shadow">🐻</div>
+                    <span class="text-[10px] font-bold text-white block mt-1">치이카와</span>
+                </div>
+                <div onclick="playVoice('hachiware')" class="cursor-pointer hover:scale-110 transition text-center">
+                    <div class="w-12 h-12 bg-white rounded-full border-2 border-chiikawa-brown flex items-center justify-center font-bold shadow">🐱</div>
+                    <span class="text-[10px] font-bold text-white block mt-1">하치와레</span>
+                </div>
+                <div onclick="playVoice('usagi')" class="cursor-pointer hover:scale-110 transition text-center">
+                    <div class="w-12 h-12 bg-white rounded-full border-2 border-chiikawa-brown flex items-center justify-center font-bold shadow">🐰</div>
+                    <span class="text-[10px] font-bold text-white block mt-1">우사기</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: 10대 / 20대 / 30대 / 40대 연령별 인생 스토리 -->
+    <section id="timeline" class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="text-center space-y-3 mb-12">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-chiikawa-pink/20 border border-chiikawa-pink text-chiikawa-pink font-bold text-xs">
+                <span>✦</span>
+                <span>DECADE JOURNEY</span>
+                <span>✦</span>
+            </div>
+            <h2 class="font-cute text-4xl sm:text-5xl font-bold text-chiikawa-brown">
+                류승민의 연령대별 스토리 (10대 ~ 40대)
+            </h2>
+            <p class="text-sm text-chiikawa-brown/80 font-medium">
+                학창 시절의 준비기부터 가천대 경영학과 20대 현재, 그리고 향후 목표까지!
+            </p>
+        </div>
+
+        <!-- Age Tabs Selector Buttons -->
+        <div class="flex items-center justify-center gap-2 sm:gap-4 flex-wrap mb-10">
+            <button onclick="selectDecade('10')" id="tab-decade-10" class="decade-tab px-6 py-3 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-white hover:bg-pink-50 text-chiikawa-brown shadow">
+                🎒 10대 (준비기)
+            </button>
+            <button onclick="selectDecade('20')" id="tab-decade-20" class="decade-tab active px-6 py-3 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-chiikawa-pink text-white shadow-md">
+                🎓 20대 (현재: 가천대 경영학과)
+            </button>
+            <button onclick="selectDecade('30')" id="tab-decade-30" class="decade-tab px-6 py-3 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-white hover:bg-yellow-50 text-chiikawa-brown shadow">
+                🚀 30대 (미래: 마케팅 리더)
+            </button>
+            <button onclick="selectDecade('40')" id="tab-decade-40" class="decade-tab px-6 py-3 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-white hover:bg-purple-50 text-chiikawa-brown shadow">
+                🏛️ 40대 (미래: C-Level &amp; 멘토)
+            </button>
+        </div>
+
+        <!-- Age Decade Display Card Container -->
+        <div id="decadeCard" class="bg-white border-4 border-chiikawa-brown rounded-3xl p-8 shadow-2xl transition-all duration-300">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Visual Banner Box -->
+                <div class="md:col-span-4 bg-chiikawa-cream p-6 rounded-2xl border-2 border-dashed border-chiikawa-brown/30 text-center space-y-4">
+                    <div id="decadeBadgeIcon" class="w-28 h-28 mx-auto rounded-full bg-chiikawa-pink border-4 border-white shadow-xl flex items-center justify-center text-5xl">
+                        🎓
+                    </div>
+                    <div class="space-y-1">
+                        <span id="decadeAgeTag" class="px-3 py-1 rounded-full bg-chiikawa-pink text-white text-xs font-bold inline-block">
+                            현재 진행형 (22세)
+                        </span>
+                        <h3 id="decadeSubTitle" class="font-cute text-2xl font-bold text-chiikawa-brown">가천대학교 경영학과</h3>
+                    </div>
+                </div>
+
+                <!-- Right Detail Story Area -->
+                <div class="md:col-span-8 space-y-4">
+                    <h3 id="decadeTitle" class="font-cute text-3xl font-bold text-chiikawa-brown">
+                        20대 — 도전과 역량 강화의 시기
+                    </h3>
+
+                    <p id="decadeDesc" class="text-sm sm:text-base leading-relaxed text-chiikawa-brown/90 font-medium">
+                        가천대학교 경영학과 재학생으로서 경영학 전공 지식과 마케팅 데이터 분석력을 다지고 있습니다. ISFJ 특유의 차분함과 성실함으로 팀 프로젝트에서 안정적인 조력자 역할을 다합니다.
+                    </p>
+
+                    <!-- Feature Trait Boxes -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        <div class="bg-chiikawa-cream p-3.5 rounded-xl border border-chiikawa-brown/20">
+                            <span class="text-xs text-chiikawa-brown/60 block font-bold">주요 키워드 &amp; 활동</span>
+                            <strong id="decadeKeyFocus" class="text-sm text-chiikawa-brown">경영학, AI 활용, 마케팅 분석</strong>
+                        </div>
+                        <div class="bg-chiikawa-cream p-3.5 rounded-xl border border-chiikawa-brown/20">
+                            <span class="text-xs text-chiikawa-brown/60 block font-bold">치이카와 마을의 응원</span>
+                            <strong id="decadeCheerMsg" class="text-sm text-chiikawa-pink">"성실하게 매일 차근차근 나아가는 멋진 사람!"</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CHARACTER SHOWCASE SECTION -->
+    <section id="characters" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-chiikawa-brown/20">
+        <div class="text-center space-y-3 mb-12">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-chiikawa-pink/20 border border-chiikawa-pink text-chiikawa-pink font-bold text-xs">
+                <span>✦</span>
+                <span>FRIENDS</span>
+                <span>✦</span>
+            </div>
+            <h2 class="font-cute text-4xl sm:text-5xl font-bold text-chiikawa-brown">
+                먼작귀 친구들을 소개합니다!
+            </h2>
+        </div>
+
+        <div class="flex items-center justify-center gap-2 sm:gap-3 flex-wrap mb-10">
+            <button onclick="selectCharacter('chiikawa')" id="tab-chiikawa" class="char-tab active px-5 py-2.5 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-chiikawa-pink text-white shadow-md">
+                🐻 치이카와
+            </button>
+            <button onclick="selectCharacter('hachiware')" id="tab-hachiware" class="char-tab px-5 py-2.5 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-white hover:bg-blue-50 text-chiikawa-brown">
+                🐱 하치와레
+            </button>
+            <button onclick="selectCharacter('usagi')" id="tab-usagi" class="char-tab px-5 py-2.5 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-white hover:bg-yellow-50 text-chiikawa-brown">
+                🐰 우사기
+            </button>
+            <button onclick="selectCharacter('momonga')" id="tab-momonga" class="char-tab px-5 py-2.5 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-white hover:bg-purple-50 text-chiikawa-brown">
+                🦝 모몽가
+            </button>
+        </div>
+
+        <div id="characterCard" class="bg-white border-4 border-chiikawa-brown rounded-3xl p-8 shadow-2xl transition-all duration-300">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-5 flex flex-col items-center bg-chiikawa-cream p-8 rounded-2xl border-2 border-dashed border-chiikawa-brown/30">
+                    <div id="charIconBg" class="w-36 h-36 rounded-full bg-pink-200 border-4 border-white shadow-xl flex items-center justify-center text-7xl">
+                        🐻
+                    </div>
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <h3 id="charName" class="font-cute text-4xl font-bold text-chiikawa-brown">치이카와</h3>
+                        <span id="charTag" class="px-3 py-1 rounded-full bg-chiikawa-pink text-white text-xs font-bold">주인공</span>
+                    </div>
+                    <p id="charDesc" class="text-base leading-relaxed text-chiikawa-brown/90 font-medium">
+                        울보이지만 상냥하고 성실한 아이! 제초 자격증 시험에 합격하기 위해 매일 노력합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE WEEDING MINIGAME SECTION -->
+    <section id="weeding-minigame" class="py-20 px-6 max-w-4xl mx-auto">
+        <div class="bg-chiikawa-cream border-4 border-chiikawa-brown rounded-3xl p-8 shadow-2xl text-center space-y-6 relative overflow-hidden">
+            <div class="space-y-2">
+                <span class="px-3 py-1 rounded-full bg-chiikawa-green text-white font-bold text-xs inline-block">MINI GAME</span>
+                <h2 class="font-cute text-4xl font-bold text-chiikawa-brown">🌿 제초 체험! 잡초를 뽑아보자!</h2>
+                <p class="text-xs text-chiikawa-brown/80 font-medium">풀을 클릭하여 보수 코인을 얻어보세요!</p>
+            </div>
+
+            <div class="flex items-center justify-center gap-8 bg-white/80 p-3 rounded-2xl border-2 border-chiikawa-brown max-w-md mx-auto">
+                <div class="font-bold text-sm">남은 잡초: <span id="weedCount" class="text-chiikawa-pink font-extrabold text-lg">6</span>개</div>
+                <div class="font-bold text-sm">획득 보수: <span id="coinCount" class="text-amber-600 font-extrabold text-lg">0</span> 코인 🪙</div>
+            </div>
+
+            <div id="gardenField" class="w-full h-64 bg-gradient-to-b from-[#8ED055] to-[#6FA63B] rounded-2xl border-3 border-chiikawa-darkgreen relative overflow-hidden shadow-inner flex flex-wrap items-center justify-around p-6">
+                <!-- Weeds dynamically inserted -->
+            </div>
+
+            <button onclick="resetWeedingGame()" class="px-6 py-2.5 rounded-xl bg-chiikawa-brown text-white font-bold text-xs hover:bg-opacity-90 transition">
+                <i class="fa-solid fa-rotate-right mr-1"></i> 잡초 다시 키우기
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-chiikawa-cream border-t-4 border-chiikawa-brown py-12 px-6 text-center space-y-4 text-xs text-chiikawa-brown/70">
+        <div class="flex items-center justify-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-chiikawa-pink text-white font-bold flex items-center justify-center text-sm">🐻</div>
+            <span class="font-cute text-2xl font-bold text-chiikawa-brown">류승민 × 먼작귀 포켓</span>
+        </div>
+        <p>&copy; 2026 Seungmin Ryu (Gachon Univ). All rights reserved.</p>
+    </footer>
+
+    <!-- CONTACT MODAL -->
+    <div id="contactModal" class="fixed inset-0 bg-black/60 z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+        <div class="bg-chiikawa-cream border-4 border-chiikawa-brown rounded-3xl p-8 max-w-md w-full shadow-2xl relative transform scale-95 transition-transform duration-300 space-y-6">
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-chiikawa-brown/10 text-chiikawa-brown font-bold flex items-center justify-center hover:bg-chiikawa-brown hover:text-white transition">✕</button>
+
+            <div class="text-center space-y-2">
+                <div class="w-16 h-16 rounded-full bg-chiikawa-pink border-2 border-chiikawa-brown mx-auto flex items-center justify-center text-3xl shadow">✉️</div>
+                <h3 class="font-cute text-3xl font-bold text-chiikawa-brown">류승민 연락처 정보</h3>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border-2 border-dashed border-chiikawa-pink space-y-3 text-sm font-bold">
+                <div class="flex items-center justify-between border-b pb-2">
+                    <span class="text-slate-500">전화번호</span>
+                    <a href="tel:01086487680" class="text-chiikawa-pink hover:underline">010-8648-7680</a>
+                </div>
+                <div class="flex items-center justify-between border-b pb-2">
+                    <span class="text-slate-500">이메일</span>
+                    <a href="mailto:seungmin@gachon.ac.kr" class="text-chiikawa-pink hover:underline">seungmin@gachon.ac.kr</a>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-slate-500">AI Tool</span>
+                    <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="text-amber-600 hover:underline">Google Gemini AI</a>
+                </div>
+            </div>
+
+            <button onclick="closeContactModal()" class="w-full py-3.5 rounded-2xl bg-chiikawa-pink text-white font-bold shadow-lg hover:brightness-105 transition">닫기</button>
+        </div>
+    </div>
+
+    <script>
+        // Decades Timeline Database
+        const decadeData = {
+            '10': {
+                title: "10대 — 기초 학업 및 탐색의 시기",
+                subTitle: "성실한 꿈의 싹을 틔운 학창 시절",
+                ageTag: "학창 시절",
+                desc: "학창 시절 규칙적인 생활 습관과 성실함으로 기본 학업 역량을 다졌습니다. ISFJ 특유의 차분하고 깊은 관찰력으로 주위 친구들과 긍정적인 관계를 쌓아왔습니다.",
+                keyFocus: "성실성, 학업 기초, 동아리 활동",
+                cheerMsg: "🌱 싹이 터서 무럭무럭 자라는 시기!",
+                icon: "🎒",
+                color: "bg-yellow-200"
+            },
+            '20': {
+                title: "20대 — 도전과 역량 강화의 시기",
+                subTitle: "가천대학교 경영학과 (22세 재학 중)",
+                ageTag: "현재 진행형 (22세)",
+                desc: "가천대학교 경영학과 재학생으로서 경영학 전공 지식과 마케팅 데이터 분석력을 다지고 있습니다. AI Tool(Gemini)을 활용해 문서 및 연구 생산성을 극대화하며, 세심함으로 팀 프로젝트를 성공으로 이끕니다.",
+                keyFocus: "경영학 전공, Gemini AI 활용, 마케팅 분석",
+                cheerMsg: "🐻 "치이카와도 응원하는 열정의 20대!"",
+                icon: "🎓",
+                color: "bg-pink-200"
+            },
+            '30': {
+                title: "30대 — 마케팅 리더 및 비즈니스 개척",
+                subTitle: "글로벌 마케팅 전략가로의 도약",
+                ageTag: "미래 비전 (30대)",
+                desc: "데이터 기반 마케팅과 AI 비즈니스 솔루션을 연결하여 혁신적인 마케팅 캠페인을 지휘하는 수석 전략가로 성장할 비전을 품고 있습니다.",
+                keyFocus: "디지털 마케팅, 데이터 전략, 비즈니스 리더십",
+                cheerMsg: "🚀 "하치와레처럼 용감하게 도전하는 리더!"",
+                icon: "🚀",
+                color: "bg-purple-200"
+            },
+            '40': {
+                title: "40대 — 최고 경영 리더십 &amp; 후학 멘토링",
+                subTitle: "C-Level 경영 총괄 및 선한 영향력",
+                ageTag: "미래 비전 (40대)",
+                desc: "조직의 C-Level 마케팅 총괄(CMO) 또는 전문가로서 인재를 양성하고, 선한 영향력을 펼치며 지속 가능한 경영 생태계를 구축해 나갈 계획입니다.",
+                keyFocus: "CMO 리더십, 조직 관리, 후학 멘토링",
+                cheerMsg: "🏛️ "쿠리만쥬 선배처럼 든든한 조력자!"",
+                icon: "🏛️",
+                color: "bg-amber-200"
+            }
+        };
+
+        // Character Database
+        const characters = {
+            chiikawa: { name: "치이카와", desc: "울보이지만 매우 상냥하고 성실한 아이! 매일매일 열심히 노력합니다.", icon: "🐻", bg: "bg-pink-200" },
+            hachiware: { name: "하치와레", desc: "긍정적인 고양이 친구! 말을 아주 잘하고 친구를 아낍니다.", icon: "🐱", bg: "bg-blue-200" },
+            usagi: { name: "우사기", desc: "우라! 야하! 거침없는 행동파이자 자유로운 영혼의 토끼 친구.", icon: "🐰", bg: "bg-yellow-200" },
+            momonga: { name: "모몽가", desc: "언제나 귀엽게 보이고 싶어 하는 하늘다람쥐!", icon: "🦝", bg: "bg-purple-200" }
+        };
+
+        let synth = null;
+        let isAudioOn = false;
+
+        function initAudio() {
+            if (!synth) {
+                synth = new Tone.Synth().toDestination();
+                synth.volume.value = -6;
+            }
+        }
+
+        function toggleAudio() {
+            isAudioOn = !isAudioOn;
+            const btnText = document.getElementById('soundText');
+            const btnIcon = document.getElementById('soundIcon');
+
+            if (isAudioOn) {
+                Tone.start();
+                initAudio();
+                btnText.innerText = "사운드 ON";
+                btnIcon.className = "fa-solid fa-volume-high text-chiikawa-pink text-sm";
+                playNote("C5");
+            } else {
+                btnText.innerText = "사운드 OFF";
+                btnIcon.className = "fa-solid fa-volume-xmark text-chiikawa-pink text-sm";
+            }
+        }
+
+        function playNote(note = "C5") {
+            if (isAudioOn && synth) {
+                try { synth.triggerAttackRelease(note, "8n"); } catch(e) {}
+            }
+        }
+
+        // Decade Selector Logic
+        function selectDecade(key) {
+            const data = decadeData[key];
+            if (!data) return;
+
+            document.querySelectorAll('.decade-tab').forEach(tab => {
+                tab.className = "decade-tab px-6 py-3 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-white hover:bg-pink-50 text-chiikawa-brown shadow";
+            });
+            const activeTab = document.getElementById(`tab-decade-${key}`);
+            if (activeTab) {
+                activeTab.className = "decade-tab active px-6 py-3 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-chiikawa-pink text-white shadow-md";
+            }
+
+            document.getElementById('decadeTitle').innerText = data.title;
+            document.getElementById('decadeSubTitle').innerText = data.subTitle;
+            document.getElementById('decadeAgeTag').innerText = data.ageTag;
+            document.getElementById('decadeDesc').innerText = data.desc;
+            document.getElementById('decadeKeyFocus').innerText = data.keyFocus;
+            document.getElementById('decadeCheerMsg').innerText = data.cheerMsg;
+
+            const iconEl = document.getElementById('decadeBadgeIcon');
+            iconEl.innerText = data.icon;
+            iconEl.className = `w-28 h-28 mx-auto rounded-full ${data.color} border-4 border-white shadow-xl flex items-center justify-center text-5xl`;
+
+            playNote("E5");
+        }
+
+        // Character Selector Logic
+        function selectCharacter(key) {
+            const char = characters[key];
+            if (!char) return;
+
+            document.querySelectorAll('.char-tab').forEach(tab => {
+                tab.className = "char-tab px-5 py-2.5 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-white hover:bg-pink-50 text-chiikawa-brown";
+            });
+            const activeTab = document.getElementById(`tab-${key}`);
+            if (activeTab) {
+                activeTab.className = "char-tab active px-5 py-2.5 rounded-2xl border-2 border-chiikawa-brown font-bold text-sm transition bg-chiikawa-pink text-white shadow-md";
+            }
+
+            document.getElementById('charName').innerText = char.name;
+            document.getElementById('charDesc').innerText = char.desc;
+
+            const iconBg = document.getElementById('charIconBg');
+            iconBg.innerText = char.icon;
+            iconBg.className = `w-36 h-36 rounded-full ${char.bg} border-4 border-white shadow-xl flex items-center justify-center text-7xl`;
+
+            playNote("G5");
+        }
+
+        function toggleMenu() {
+            const drawer = document.getElementById('navDrawer');
+            const content = document.getElementById('navDrawerContent');
+            if (drawer.classList.contains('opacity-0')) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                content.classList.remove('translate-x-full');
+            } else {
+                content.classList.add('translate-x-full');
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        function popBalloon(el, note) {
+            playNote(note);
+            el.style.transform = 'scale(1.4)';
+            el.style.opacity = '0';
+            setTimeout(() => {
+                el.style.transform = 'scale(1)';
+                el.style.opacity = '1';
+            }, 3000);
+        }
+
+        function playChimeSound() { playNote("G5"); }
+        function playVoice(key) { selectCharacter(key); }
+
+        // WEEDING MINIGAME LOGIC
+        let weedCount = 6;
+        let coins = 0;
+
+        function initWeedingGame() {
+            const garden = document.getElementById('gardenField');
+            garden.innerHTML = '';
+            weedCount = 6;
+            document.getElementById('weedCount').innerText = weedCount;
+
+            for (let i = 0; i < 6; i++) {
+                const weed = document.createElement('button');
+                weed.className = 'w-16 h-16 rounded-full bg-white/90 border-2 border-chiikawa-brown flex items-center justify-center text-3xl shadow-lg hover:scale-110 active:scale-90 transition cursor-pointer m-2';
+                weed.innerHTML = '🌿';
+                weed.onclick = function () { pullWeed(weed); };
+                garden.appendChild(weed);
+            }
+        }
+
+        function pullWeed(element) {
+            playNote("G5");
+            element.style.transform = 'scale(0)';
+            element.style.opacity = '0';
+            setTimeout(() => { element.remove(); }, 200);
+
+            weedCount--;
+            coins += 50;
+
+            document.getElementById('weedCount').innerText = Math.max(0, weedCount);
+            document.getElementById('coinCount').innerText = coins;
+        }
+
+        function resetWeedingGame() { initWeedingGame(); }
+
+        // Contact Modal
+        function openContactModal() {
+            playNote("C6");
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            selectDecade('20');
+            selectCharacter('chiikawa');
+            initWeedingGame();
+        });
+    </script>
+</body>
+</html>
